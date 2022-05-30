@@ -1,88 +1,93 @@
 import React, { useState } from 'react';
-
 import { validateEmail } from '../../utils/helpers';
-
-function Contact() {
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
+// Create State variables for the fields in the form
+// We are also setting their initial values to an empty array 
+export default function Form() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const { name, email, message } = formState;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!errorMessage) {
-      console.log('Submit Form', formState);
-    }
-  };
-
-  const handleChange = (e) => {
-    if (e.target.name === 'email') {
-      const isValid = validateEmail(e.target.value);
-      if (!isValid) {
-        setErrorMessage('Your email is invalid.');
-      } else {
-        setErrorMessage('');
-      }
-    } else {
-      if (!e.target.value.length) {
-        setErrorMessage(`${e.target.name} is required.`);
-      } else {
-        setErrorMessage('');
-      }
-    }
-    if (!errorMessage) {
-      setFormState({ ...formState, [e.target.name]: e.target.value });
-      console.log('Handle Form', formState);
-    }
-  };
-
-  return (
+// Getting the value and name of the input which triggered the change
+  const handleInputChange = (e) => {
+    const { target } = e;
+    const inputType = target.name;
+    const inputValue = target.value;
+// Based on the input type, we set the state of either name, email, or message
+    if (inputType === 'name') {
+      setName(inputValue);
+    } else if (inputType === 'email') {
+      setEmail(inputValue);
     
-    <section id='formsubmission'>
+    } else {
+      setMessage(inputValue);
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+// Preventing the default behavior of the form submit(which is to refresh the page)
+// First we check to see if the email is not valid or if there is a name and message
+    if (!validateEmail(email) || !name ||  !message) {
+      // Then send error message
+      setErrorMessage('Input is invalid');
+      return;
+    }
+    // Alert once submitted
+    alert(`Thank You ${name}!`);
+    setName('');
+    setEmail('');
+    setMessage('');
+  };
+//Render html when page loads
+  return (
+    <div>
+      <div>
+        <h1>Contact Me</h1>
+      </div>
+
       
-      <form id="contact-form" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
+        <section id="contactform" class='form-inline'>
+          <label for="name">NAME</label>
+          <br></br>
           <input
-            type="text"
+            value={name}
             name="name"
-            defaultValue={name}
-            onBlur={handleChange}
+            onChange={handleInputChange}
+            type="name"
+            
           />
-        </div>
-        <div>
-          <label htmlFor="email">Email address:</label>
+         <br></br>
+          <label for="email">EMAIL</label>
+          <br></br>
           <input
-            type="email"
+            value={email}
             name="email"
-            defaultValue={email}
-            onBlur={handleChange}
+            onChange={handleInputChange}
+            type="email"
+            
           />
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea
+          <br></br>
+          <label for="message">MESSAGE</label>
+          <br></br>
+          <input
+            value={message}
             name="message"
-            rows="5"
-            defaultValue={message}
-            onBlur={handleChange}
+            onChange={handleInputChange}
+            type="message"
+            
           />
-        </div>
+          <br></br>
+          <br></br>
+          <button type="button" onClick={handleFormSubmit}>
+            SUBMIT
+          </button>
+        </section>
         {errorMessage && (
           <div>
             <p className="error-text">{errorMessage}</p>
           </div>
         )}
-        <button type="submit">Submit</button>
-      </form>
-  
-    </section>
-    
+      </div>
+   
   );
 }
-
-export default Contact;

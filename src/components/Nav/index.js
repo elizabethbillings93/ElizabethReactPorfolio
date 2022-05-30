@@ -16,15 +16,10 @@ function Nav(props) {
       <nav>
         <ul className="flex-row">
           {pages.map((Page) => (
-            <li
-              className={`mx-5 ${
+            <li className={`mx-5 ${
                 currentPage.name === Page.name && 'navActive'
-                }`}
-              key={Page.name}
-            >
-              <span
-                onClick={() => setCurrentPage(Page)}
-              >
+                }`}key={Page.name}>
+              <span onClick={() => setCurrentPage(Page)}>
                 {capitalizeFirstLetter(Page.name)}
               </span>
             </li>

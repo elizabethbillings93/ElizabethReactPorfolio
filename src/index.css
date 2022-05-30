@@ -153,7 +153,7 @@ input {
   border: 1px solid var(--dark);
   outline: none;
   border-radius: 3px;
-  transition: box-shadow 0.2s;
+
 }
 
 input:focus {
@@ -290,8 +290,24 @@ textarea {
   text-align: center;
   
 }
+#logoimage{
+  height: 100px;
+}
+footer{
+  text-align: center;
+  color:white;
+  bottom:0;
+  background-color:var(--dark);
+  opacity: 80%
+}
+
+#contactform{
+ display: inline-table;
+}
+  
 #formsubmission{
   display:inline-block;
+  
 }
 
 .project-text {
