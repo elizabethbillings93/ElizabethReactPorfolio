@@ -193,7 +193,12 @@ header img {
   height: auto;
   opacity: 0.5;
 }
-
+.nav li:hover {
+ transition: ease-out;
+  color:white;
+  border: 40px solid white;
+  text-decoration: none;
+}
 nav {
   position: relative;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -206,6 +211,7 @@ nav {
   padding: 20px;
   border: solid white 10px;
   opacity: 90%;
+  text-align:center;
 }
 
 
@@ -228,16 +234,7 @@ ul.skills li {
   list-style-type: none;
 }
 
-footer {
-  font-size: 48px;
-  justify-content: center;
-}
 
-footer a {
-  color: var(--light);
-  margin: 10px 20px;
-  transition: all .3s ease-in-out;
-}
 
 
 textarea {
@@ -272,48 +269,6 @@ textarea {
   justify-content: center;
 }
 
-.mx-1 {
-  margin-right: var(--spacing-one);
-  margin-left: var(--spacing-one);
-}
-
-.mx-2 {
-  margin-right: var(--spacing-two);
-  margin-left: var(--spacing-two);
-}
-
-.my-1 {
-  margin-top: var(--spacing-one);
-  margin-bottom: var(--spacing-one);
-}
-
-.my-2 {
-  margin-top: var(--spacing-two);
-  margin-bottom: var(--spacing-two);
-}
-
-
-
-.px-1 {
-  padding-right: var(--spacing-one);
-  padding-left: var(--spacing-one);
-}
-
-.px-2 {
-  padding-right: var(--spacing-two);
-  padding-left: var(--spacing-two);
-}
-
-.py-1 {
-  padding-top: var(--spacing-one);
-  padding-bottom: var(--spacing-one);
-}
-
-.py-2 {
-  padding-top: var(--spacing-two);
-  padding-bottom: var(--spacing-two);
-}
-
 .card {
   width: 25%;
   text-align: center;
@@ -339,12 +294,6 @@ textarea {
   display:inline-block;
 }
 
-.project-bg {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 .project-text {
     color: white;
     position: absolute;
@@ -354,39 +303,45 @@ textarea {
     right: 0px;
     padding: 50px;
     z-index: 900;
-    transition: all .5s ease-in-out;
+    transition: .70s ease-in-out;
+    text-decoration: none; 
+    background-color: var(--dark);
+    
 }
 
 .project-text:hover {
-  background-color: var(--dark);
+ 
   color:white;
-  border: 10px solid white;
+  border: 40px solid white;
+  text-decoration: none;
 }
 
 .project-text h3 {
   font-size: 2.5rem;
+  text-decoration: none;
 }
 
 .project-text a {
   text-decoration: none;
   font-weight: bold;
   color: white;
-  transition: all .3s ease-in-out;
   text-align: center;
 }
 .repotext{
   color:white;
+  text-decoration: none;
 }
 #reponame{
   font-size: 20px;
-
+  text-decoration: none;
+  color:inherit;
 }
 #projectname{
   text-decoration: underline;
+  color:inherit;
+
 }
-/* .project-text a:hover {
-  color: var(--darker);
-} */
+
 
 .navActive {
   color: var(--secondary);
