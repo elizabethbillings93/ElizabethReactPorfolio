@@ -1,24 +1,21 @@
 import React from 'react';
 
 function Footer() {
-
-  // Replace links with social media profiles
-  const icons = [
+  const footerlinks = [
     {
-      name: "fab fa-github",
-      link: "https://github.cohttps://github.com/elizabethbillings93/"
+      name: "github",
+      link: "https://github.com/"
     },
     {
-      name: "fab fa-linkedin",
-      link: "https://www.linkedin.com/in/elizabethcbillings/"
-    }
+      name: "linkedin",
+      link: "https://www.linkedin.com/"
+    },
   ]
-
+// Need to work on this
   return (
     <footer>
-      {icons.map(icon =>
-      (<a href={icon.link} key={icon.name}>
-        <i className={icon.name}></i></a>))}
+     {footerlinks[0]}
+     {footerlinks[1]}
     </footer>
   );
 }
