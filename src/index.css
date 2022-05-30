@@ -1,13 +1,424 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+main {
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 50px 30px;
+}
+:root {
+
+  --secondary: #31343D;
+  --light: #fafafa;
+  --dark: #90a3a2;
+  --darker: #728b74;
+  --alpha: rgba(255,255,255,.7);
+  --error: rgb(228, 46, 1);
+  --spacing-one: calc(1rem * 0.5);
+  --spacing-two: calc(1rem);
+  --spacing-five: calc(2.5rem);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  background: var(--darker);
+  background-image: url('./assets/background.jpeg');
+  background-attachment: fixed;
+  color: var(--light);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  margin: 5px 0;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 50px 20px;
+  
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 20px 0;
+  line-height: 2rem;
+}
+
+
+
+
+header {
+  background: var(--dark);
+  opacity: 50%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+button {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  border: none;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  margin: 0 1px;
+  background-color: var(--dark);
+  padding: 10px 15px;
+  opacity: 0.7;
+}
+.proficiencies{
+  border:solid white 10px;
+  background-color: var(--dark);
+  position:absolute;
+  
+  width: 50%;
+  text-align:center;
+  opacity: 80%;
+  align-items: center;
+  justify-content: center;
+}
+.resumelist{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+  
+}
+button:hover {
+  opacity: 1;
+}
+
+
+
+img {
+  max-width: 100%;
+}
+
+span[role='img'] {
+  cursor: default;
+}
+
+form {
+  width: 40%;
+}
+
+input {
+  margin: 10px 0;
+  font-size: 1rem;
+  padding: 0.25rem;
+  width: 600px;
+  border: 1px solid var(--dark);
+  outline: none;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+}
+
+input:focus {
+  border: 1px solid var(--secondary);
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+label {
+  margin-right: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  border-bottom: solid white 10px;
+}
+
+header h1 {
+  position: relative;
+  z-index: 2;
+  color:white;
+  margin-top:60px;
+  font-size: 50px;
+}
+
+header img {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  opacity: 0.5;
+}
+
+nav {
+  position: relative;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 2.5rem;
+  margin: 60px 20px;
+}
+.aboutparagraph{
+  background-color: var(--dark);
+  margin-top: 50px;
+  padding: 20px;
+  border: solid white 10px;
+  opacity: 90%;
+}
+
+
+nav li {
+  cursor: pointer;
+  margin: 0 50px;
+}
+#frontendprof{
+  text-decoration: underline;
+}
+#backendprof{
+  text-decoration: underline;
+  padding-top: 20px;
+}
+ul.skills {
+  line-height: 2rem;
+}
+
+ul.skills li {
+  list-style-type: none;
+}
+
+footer {
+  font-size: 48px;
+  justify-content: center;
+}
+
+footer a {
+  color: var(--light);
+  margin: 10px 20px;
+  transition: all .3s ease-in-out;
+}
+
+
+textarea {
+  width: 600px;
+  height: 200px;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.mx-1 {
+  margin-right: var(--spacing-one);
+  margin-left: var(--spacing-one);
+}
+
+.mx-2 {
+  margin-right: var(--spacing-two);
+  margin-left: var(--spacing-two);
+}
+
+.my-1 {
+  margin-top: var(--spacing-one);
+  margin-bottom: var(--spacing-one);
+}
+
+.my-2 {
+  margin-top: var(--spacing-two);
+  margin-bottom: var(--spacing-two);
+}
+
+
+
+.px-1 {
+  padding-right: var(--spacing-one);
+  padding-left: var(--spacing-one);
+}
+
+.px-2 {
+  padding-right: var(--spacing-two);
+  padding-left: var(--spacing-two);
+}
+
+.py-1 {
+  padding-top: var(--spacing-one);
+  padding-bottom: var(--spacing-one);
+}
+
+.py-2 {
+  padding-top: var(--spacing-two);
+  padding-bottom: var(--spacing-two);
+}
+
+.card {
+  width: 25%;
+  text-align: center;
+}
+.headshot{
+  background-image: url('./assets/headshot/headshot.jpeg');
+  border: solid white 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.project {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  margin: 30px;
+  text-align: center;
+  
+}
+#formsubmission{
+  display:inline-block;
+}
+
+.project-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.project-text {
+    color: white;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 50px;
+    z-index: 900;
+    transition: all .5s ease-in-out;
+}
+
+.project-text:hover {
+  background-color: var(--dark);
+  color:white;
+  border: 10px solid white;
+}
+
+.project-text h3 {
+  font-size: 2.5rem;
+}
+
+.project-text a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: all .3s ease-in-out;
+  text-align: center;
+}
+.repotext{
+  color:white;
+}
+#reponame{
+  font-size: 20px;
+
+}
+#projectname{
+  text-decoration: underline;
+}
+/* .project-text a:hover {
+  color: var(--darker);
+} */
+
+.navActive {
+  color: var(--secondary);
+  cursor: default;
+}
+@media only screen and (max-width: 1300px) {
+  nav {
+    position: static;
+    display: block;
+    z-index: 100;
+    margin: 0 10px;
+    font-size: 2rem;
+  }
+  header h1 {
+    display: block;
+    height: 30px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  nav {
+    position: static;
+    display: block;
+    z-index: 100;
+    margin: 0 10px;
+    font-size: 1.3rem;
+  }
+  header h1{
+    display: block;
+    margin: 5px 10px;
+    height: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 2.3rem;
+  }
 }
