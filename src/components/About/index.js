@@ -3,8 +3,8 @@ import headshot from  '../../assets/headshot/headshot.jpeg';
 
 function About() {
   return (
-    <section>
-   
+    <section className="my-5">
+   <div className="my-2">
         <div className="profile-img my-5">
           <img src={headshot} className='headshot' alt=''></img>
         <i className="fas fa-user-circle" style={{ fontSize: "96px" }}></i>
@@ -18,6 +18,7 @@ function About() {
         Finding that I enjoyed more creating, I decided to change career paths to Software Development. 
         I am currently attending Georgia Tech Coding Bootcamp and will be certified by June. 
         </p>
+      </div>
       </div>
 </div>  
     </section>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Footer() {
-  const footerlinks = [
+  const icons = [
     {
       name: "github",
       link: "https://github.com/"
@@ -13,9 +13,12 @@ function Footer() {
   ]
 // Need to work on this
   return (
-    <footer>
-     {footerlinks[0]}
-     {footerlinks[1]}
+<footer className="flex-row px-1">
+      {icons.map(icon =>
+      (
+        <a href={icon.link} key={icon.name} target="_blank" rel="noopener noreferrer"><i className={icon.name}></i></a>
+      )
+        )}
     </footer>
   );
 }
